@@ -1,90 +1,70 @@
-<template>
-    <div class="page-home">
-        <section class="intro">
-            <h1>BLOG 서비스 with Nuxt.js</h1>
-        </section>
-        <section class="featured-post">
-            <article class="post-preview">
-                <nuxt-link :to="'/posts/' + 1">
-                    <figure class="post-thumbnail"></figure>
-                    <div class="post-content">
-                        <h2 class="post-title">포스트 제목 1</h2>
-                        <p class="post-text">포스트 내용</p>
-                    </div>
-                </nuxt-link>
-
-            </article>
-            <article class="post-preview">
-                <nuxt-link :to="'/posts/' + 2">
-                    <figure class="post-thumbnail"></figure>
-                    <div class="post-content">
-                        <h2 class="post-title">포스트 제목 2</h2>
-                        <p class="post-text">포스트 내용</p>
-                    </div>
-                </nuxt-link>
-            </article>
-        </section>
-    </div>
+<template lang="pug">
+.page-home
+  section.intro
+    h1 BLOG 서비스 with Nuxt.js
+  section.featured-posts
+    post-preview(
+      id="1",
+      title="빅 데이터",
+      thumbnail="//goo.gl/mJ5Vsy",
+      content="빅 데이터란? 기존 데이터베이스 관리도구의 능력을 넘어서는 대량의 정형 또는 비정형 데이터 집합을 포함한 데이터로부터 가치를 추출하고 결과를 분석하는 기술이다."
+    )
+    post-preview(
+      id="2",
+      title="머신 러닝",
+      thumbnail="//goo.gl/HoiVkE",
+      content="머신 러닝은 인공 지능의 한 분야로, 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야를 말한다."
+    )
 </template>
-<style>
-    .intro {
-        position: relative;
-        height: 200px;
-        margin-bottom: 20px;
-        padding: 30px;
-        background-size: cover;
-    }
-    .intro h1 {
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        width: 90%;
-        font-size: 1.5rem;
-        border-radius: 4px;
-        padding: 10px;
-    }
-    .featured-posts {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 20px;
-    }
-    .post-preview {
-        border: 1px solid #aaa;
-        box-shadow: 0 2px 2px #aaa;
-        flex: 1 0 90%;
-        margin: 0 5% 15px 5%;
-    }
-    a {
-        text-decoration: none;
-        transition: all 0.4s ease;
 
-    }
-    .post-thumbnail {
-        width: 100%;
-        height: 150px;
-        margin: 0;
-        background-position: center;
-        background-size: cover;
-    }
-    .post-title {
-        margin-bottom: 0;
-    }
-    .post-text {
-        margin-top: 0;
-    }
-    .post-content {
-        padding: 10px;
-        text-align: center;
-    }
-    @media (min-width: 768px) {
-        .intro h1 {
-            font-size: 2rem;
-        }
-        .post-preview {
-            flex: 0 0 45%;
-            margin: 0 10px;
-        }
-    }
+
+<script>
+import PostPreview from '@/components/Posts/PostPreview'
+
+export default {
+  components: { PostPreview }
+}
+</script>
+
+
+<style lang="sass" scoped>
+@import "~assets/styles/config"
+
+.intro
+  position: relative
+  height: 200px
+  margin-bottom: 20px
+  padding: 30px
+  background: darken($color, 40%) url("~assets/images/intro-bg.jpg") center
+  background-size: cover
+
+  h1
+    position: absolute
+    top: 5%
+    left: 5%
+    width: 90%
+    font-size: 1.5rem
+    color: lighten($color, 20%)
+    background-color: rgba($color, 0.26)
+    border-radius: 4px
+    padding: 10px
+
+.featured-posts
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+  padding: 20px
+
+a
+  text-decoration: none
+  color: darken($color, 20%)
+  transition: all 0.4s ease
+  &:hover .post-content,
+  &:active .post-content
+    background-color: rgba($color, 0.26)
+
+@media (min-width: 768px)
+  .intro h1
+    font-size: 2rem
 </style>
