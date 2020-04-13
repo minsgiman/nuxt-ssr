@@ -1,5 +1,5 @@
 <template lang="pug">
-	.page-posts
+	.page-posts.container
 		h1.page-title Posts
 		p 블로그 서비스 소개 페이지 입니다.
 		.post-list
