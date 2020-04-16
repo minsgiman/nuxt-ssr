@@ -15,6 +15,19 @@
 </template>
 <script>
     export default {
+        head() {
+            const post = this.loadedPost
+            return {
+                title: post.title,
+                meta: [
+                    {
+                        hid: "description",
+                        name: "description",
+                        content: `${post.title} 포스트 페이지 입니다.`, // 보다 적절한 설명 필요
+                    }
+                ]
+            }
+        },
         computed: {
             loadedPost() {
                 const id = this.$route.params.id;

@@ -10,6 +10,19 @@
     import PostForm from '@/components/Admin/PostForm'
 
     export default {
+        head() {
+          const post = this.loadedPost;
+          return {
+              title: post.title,
+              meta: [
+                  {
+                      hid: 'description',
+                      name: 'description',
+                      content: `${post.title} 포스트 수정 페이지 입니다.`,
+                  }
+              ]
+          }
+        },
         layout: 'admin',
         components: { PostForm },
         computed: {
