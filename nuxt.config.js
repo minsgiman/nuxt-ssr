@@ -13,6 +13,18 @@ export default {
             })
         }
     },
+    transition: {
+        name: 'fade',
+        mode: 'out-in',
+        beforeEnter(el) {
+            // el => 페이지 컴포넌트 DOM 객체
+            console.log('페이지 트랜지션 진입', el)
+        }
+    },
+    layoutTransition: {
+        name: 'layout',
+        mode: 'out-in'
+    },
     env: {
         baseUrl: process.env.BASE_URL || 'https://nuxt-86321.firebaseio.com'
     },
