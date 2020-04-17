@@ -1,8 +1,21 @@
-module.exports = {
+const src = 'client';
+
+export default {
     mode: 'universal',
 
-    srcDir: 'client',
-
+    srcDir: src,
+    router: {
+        extendRoutes (routes, resolve) {
+            routes.push({
+                name: 'pageNotFound',
+                path: '*',
+                component: resolve(__dirname, src + '/pages/404.vue')
+            })
+        }
+    },
+    env: {
+        baseUrl: process.env.BASE_URL || 'https://nuxt-86321.firebaseio.com'
+    },
     /*
     ** Headers of the page
     */
