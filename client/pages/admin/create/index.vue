@@ -7,7 +7,6 @@
 </template>
 <script>
 import PostForm from '@/components/Admin/PostForm'
-import axios from 'axios'
 
 export default {
     layout: 'admin',

@@ -18,12 +18,8 @@
                     | {{ '"' + (isLogin ? '회원가입' : '로그인') + '" 폼으로 변경' }}
 </template>
 <script>
-    import UiInput from '@/components/UI/UiInput'
-    import UiButton from '@/components/UI/UiButton'
-
     export default {
         layout: 'admin',
-        components: { UiInput, UiButton },
         data() {
             return {
                 isLogin: true

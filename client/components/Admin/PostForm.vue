@@ -13,14 +13,7 @@ form(@submit.prevent="onSave")
     ) 취소
 </template>
 <script>
-import UiButton from '@/components/UI/UiButton'
-import UiInput from '@/components/UI/UiInput'
-
 export default {
-    components: {
-        UiButton,
-        UiInput
-    },
     props: {
         post: { type: Object, default: () => ({}) }
     },
