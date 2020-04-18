@@ -1,5 +1,6 @@
 <template>
     <div>
+        <notifications group="admin-noti"/>
         <section class="intro"></section>
         <header-nav
                 :nav-links="navLinks"
@@ -10,8 +11,8 @@
                 @onClose="closeMenu"/>
         <div class="layout-admin container">
             <h1 class="admin-title">관리자 페이지</h1>
-            <nuxt/>
         </div>
+        <nuxt/>
     </div>
 </template>
 <script>

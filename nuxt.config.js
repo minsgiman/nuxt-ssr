@@ -60,7 +60,10 @@ export default {
     /*
     ** Plugins to load before mounting the App
     */
-    plugins: ['~plugins/GlobalComponents.js'],
+    plugins: [
+        '~plugins/GlobalComponents.js',
+        '~plugins/Notifications.js'
+    ],
 
     /*
     ** Nuxt.js modules

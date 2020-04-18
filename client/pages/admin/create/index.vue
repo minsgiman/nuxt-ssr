@@ -18,7 +18,16 @@ export default {
             // 스토어에 createPost 디스패치
             this.$store
                 .dispatch('createPost', newPost)
-                .then(() => this.$router.push('/admin'))
+                .then(() => {
+                    this.$notify({
+                        group: 'admin-noti',
+                        title: '등록 성공!',
+                        text: '새 포스트 등록에 성공했습니다.',
+                        duration: 2000,
+                        speed: 10
+                    })
+                    this.$router.push('/admin');
+                })
         }
     }
 }

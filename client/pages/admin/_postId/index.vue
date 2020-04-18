@@ -36,7 +36,16 @@
                 // 스토어에 updatePost 디스패치
                 this.$store
                     .dispatch('updatePost', editedPost)
-                    .then(res => this.$router.push('/admin'))
+                    .then(res => {
+                        this.$notify({
+                            group: 'admin-noti',
+                            title: '수정 성공!',
+                            text: '포스트 수정에 성공했습니다.',
+                            duration: 2000,
+                            speed: 10
+                        })
+                        this.$router.push('/admin')
+                    })
             }
         }
     }
