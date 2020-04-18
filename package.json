@@ -19,6 +19,7 @@
     "IE >= 10"
   ],
   "dependencies": {
+    "@nuxtjs/axios": "^5.9.7",
     "axios": "^0.19.2",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
