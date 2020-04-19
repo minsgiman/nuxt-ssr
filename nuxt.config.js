@@ -26,7 +26,8 @@ export default {
         mode: 'out-in'
     },
     env: {
-        baseUrl: process.env.BASE_URL || 'https://nuxt-86321.firebaseio.com'
+        baseUrl: process.env.BASE_URL || 'https://nuxt-86321.firebaseio.com',
+        APIKey: 'AIzaSyA_ybYGTW_ZKvt2PgVNDimwc1VpHtRy4nU'
     },
     /*
     ** Headers of the page
