@@ -31,18 +31,22 @@
         },
         methods: {
             onSubmit() {
-                const API_KEY = process.env.APIKey;
-                const authURL = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/${
-                    !this.isLogin ? 'signupNewUser' : 'verifyPassword'
-                }?key=${API_KEY}`
-
-                this.$axios.$post(authURL, {
+                this.$store.dispatch('authUser', {
+                    isLogin: this.isLogin,
                     email: this.email,
-                    password: this.password,
-                    returnSecureToken: true
+                    password: this.password
                 })
-                .then(result => console.log(result))
-                .catch(e => console.error(e));
+                .then(() => {
+                    this.$notify({
+                        group: 'admin-noti',
+                        title: '로그인 성공!',
+                        type: 'success',
+                        text: '사용자 로그인에 성공했습니다.',
+                        duration: 2000,
+                        speed: 10
+                    })
+                    this.$router.push('/admin')
+                })
             }
         }
     }
