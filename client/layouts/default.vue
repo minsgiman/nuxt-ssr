@@ -17,6 +17,7 @@
 
   export default {
     components: { HeaderNav, HeaderNavMenu },
+    middleware: 'logger',
     data() {
       return {
         displayMenu: false,

@@ -24,6 +24,7 @@
           }
         },
         layout: 'admin',
+        middleware: 'authenticated',
         components: { PostForm },
         computed: {
             loadedPost() {
